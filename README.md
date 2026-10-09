@@ -18,7 +18,7 @@ To run this project locally, you need to set up a virtual environment and instal
 
 1. Create a virtual environment:
 
-`python -m venv venv`
+    `python -m venv venv`
 
 2. Activate the environment:
   On Windows: 
@@ -31,7 +31,7 @@ To run this project locally, you need to set up a virtual environment and instal
 
 ## Run the development server:
 
-python manage.py runserver
+    `python manage.py runserver`
 
 ---
 
@@ -53,7 +53,7 @@ Per avviare il progetto in locale, è necessario creare un ambiente virtuale e i
 
 1. Crea un ambiente virtuale:
 
-`python -m venv venv`
+    `python -m venv venv`
 
 2. Attiva l'ambiente:
   Su Windows: `venv\Scripts\activate`
@@ -63,5 +63,5 @@ Per avviare il progetto in locale, è necessario creare un ambiente virtuale e i
 `pip install -r requirements.txt`
 
 Avvia il server di sviluppo:
-
-`python manage.py runserver`
+    
+    `python manage.py runserver`
