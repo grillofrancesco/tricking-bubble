@@ -66,6 +66,6 @@ Per avviare il progetto in locale, è necessario creare un ambiente virtuale e i
 3. Installa le dipendenze:
 `pip install -r requirements.txt`
 
-Avvia il server di sviluppo:
+## Avvia il server di sviluppo:
     
 `python manage.py runserver`
