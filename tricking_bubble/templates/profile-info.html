@@ -1,0 +1,27 @@
+<div class="profile-info">
+    <h1>
+        I tuoi dati:
+    </h1>
+    <p class="user-info">
+        Username:<span class="less-visible">{{ user }}</span> 
+    </p>
+    <p class="user-info">
+        La tua password non viene salvata in chiaro, neanche noi la conosciamo.
+    </p>
+    <p class="user-info">
+        Email:<span class="less-visible">{{ email }}</span>   
+    </p>
+    <p class="user-info">
+        Data di registrazione:<span class="less-visible">{{ data_primo_login }}</span> 
+    </p>
+    <p class="user-info">
+        Data di nascita:<span class="less-visible">{{ data_nascita }}</span> 
+    </p>
+
+    <button class="edit-credentials">
+        <a href="{% url 'edit_profile' %}">Modifica</a>
+    </button>
+    <button class="in-profile-logout">
+        <a href="{% url 'logout' %}">Logout</a>
+    </button>
+</div>

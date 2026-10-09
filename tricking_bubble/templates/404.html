@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="screen-container errors">
+        <h1 class="err-title ff-anton">..Oops!</h1>
+        <div id="authenticate">
+            <h1>Sembra che la pagina che stai cercando non esiste. </h1>
+            <p class="err-content">Torna indietro.</p>
+            <a href="{% url 'home' %}">Schermata home</a>
+            <a href="{% url 'profile' %}">Il tuo profilo</a>
+            <a href="{% url 'category_choice' %}">Trick_tree</a>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="screen-container authenticate">
+        <div id="authenticate">
+            <h2>Logout eseguito con successo.</h2>
+            <hr id="separator">
+            <div class="final-buttons">
+                <button> <a href="{% url 'login' %}">Accedi!</a></button>
+                <button> <a href="{% url 'home' %}">Pagina Home</a></button>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

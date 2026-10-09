@@ -1,0 +1,57 @@
+{% load static %}
+
+<nav class="desktop-nav">
+    <ul class="desktop-item-list">
+        <li class="title"><a href="{% url 'home' %}">Tricking Bubble</a></li>
+        <li class="desktop-item {% if active == 'home' %} active {% endif %}">
+            <a href="{% url 'home' %}">Home</a></li>
+        <li class="desktop-item {% if active == 'trick_tree' %} active {% endif %}">
+            <a href="{% url 'category_choice' %}">Tricks</a></li>
+        <li class="desktop-item {% if active == 'progress' %} active {% endif %}"><a href="{% url 'progress' %}">Il tuo progresso</a></li>
+        {% if user.is_authenticated and user != 'AnonymousUser' %}
+            <li class="desktop-item register"><a href="{% url 'logout' %}">Logout</a></li>
+        {% else %}
+            <li class="desktop-item register"><a href="{% url 'register' %}">Registrati</a></li>
+            <li class="desktop-item login"><a href="{% url 'login' %}">Accedi</a></li>
+        {% endif %}
+        <li class="desktop-item profile"><a href="{% url 'profile' %}">
+            {% if img_profilo %}
+                <img src="{{ img_profilo }}" class="img-profilo" alt="foto profilo  ">
+            {% else %}
+                <svg class="img-profilo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
+            {% endif %}
+        </a></li>
+        <li class="desktop-item toggle" onclick="ToggleMenu()"><span class="bars"></span></li>
+    </ul>
+</nav>
+
+<nav class="mobile-nav">
+    <ul class="link-list">
+        <li class="list-element {% if active == 'home' %} active {% endif %}">
+            <a href="{% url 'home' %}">
+                <span class="icon fa-solid fa-home"></i></span> 
+                <p class="text">Home</p>
+            </a>
+        </li>
+        <li class="list-element {% if active == 'trick_tree' %} active {% endif %}">
+            <a href="{% url 'trick_tree' %}">
+                <span class="icon fa-solid fa-diagram-project"></span> 
+                <p class="text">Trick Tree</p> 
+            </a>
+        </li>
+        <li class="list-element {% if active == 'progress' %} active {% endif %}">
+            <a href="{% url 'progress' %}">
+                <span class="icon fa-solid fa-chart-simple"></span> 
+                <p class="text">Progresso</p> 
+            </a>
+        </li>
+        <li class="list-element {% if active == 'profile' %} active {% endif %}">
+            <a href="{% url 'profile' %}">
+                <span class="icon fa-solid fa-user"></span> 
+                <p class="text">Profilo</p> 
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<script src="{% static 'scripts/nav_script.js' %}"></script>

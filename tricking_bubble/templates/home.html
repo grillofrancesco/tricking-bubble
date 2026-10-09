@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% load static %}
+    <section id="parallax-banner">
+        <!--  Impostare static  --> 
+        <img src="{% static 'img_people/my_back.png' %}" id='rear_1' alt="boy doing a backflip">
+        <img src="{% static 'img_people/flip_6.png' %}" id='rear_2' alt="man doing a sideflip">
+        <img src="{% static 'img_people/wall_flip.png' %}" id='rear_3' alt="man jumping off a wall">
+        <img src="{% static 'img_people/roundoff.png' %}" id='front_1' alt="man doing a roundoff">
+        <img src="{% static 'img_people/cartwheel.png' %}" id='front_2' alt="girl doing a cartwheel">
+        
+        <h2 id='hero' class="ff-anton"> Tricking Bubble </h2>
+        <a href="#title" id="btn">Esplora</a>
+    </section>
+    <div id="sec">
+        <div class="sec-element">
+            <p id="left" class="ff-anton">
+                Impara salti mortali
+            </p>
+            <video class="gif-animation" loop autoplay muted >
+                <source src="{% static 'home_videos/Tricking_Bubble_Overview.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="sec-element cards">
+            <p id="title" class="ff-anton">
+                3 Diverse categorie!
+            </p>
+            {% include 'category_form.html' %}
+        </div>
+        <div class="sec-element">
+            <video class="gif-animation" loop autoplay muted >
+                <source src="{% static 'home_videos/Tricking_Bubble_Progress.mp4' %}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p id="right" class="ff-anton">
+                Traccia il tuo progresso!
+            </p>
+        </div>    
+    </div>
+    <script src="{% static 'scripts/home_script.js' %}"></script>
+{% endblock %}

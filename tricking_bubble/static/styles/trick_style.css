@@ -1,0 +1,127 @@
+.screen-container.tricks{
+    overflow: auto;
+    white-space: nowrap;
+    width: 100%;
+    min-height: 80vh;
+    padding-top: 0;
+}
+.screen-container.tricks::-webkit-scrollbar:horizontal{
+    display: inline;
+}
+.screen-container.tricks h1.titolo{
+    color: var(--orange);
+    font-size: var(--fs-xl);
+    text-shadow: var(--sienna) -8px 0 0, #000 5px 2px 2rem;
+    width: 100vw;
+    justify-self: baseline;
+    position: sticky;
+    left: 0;
+    top: 2rem;
+}
+.trick-list{
+    position: relative;
+    top: 0;
+    height: 50%;    /* Switch to width for mobile */
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+    margin: 12rem 0;
+
+    overflow-y:visible;
+}
+
+.trick-list li{
+    list-style: none;
+    height: 100%;
+    width: 4.6rem;        /* 2/3 della dimensione del trick */
+    padding: 0;
+    margin: 0 1vw;
+    display: grid;
+    place-items: center;
+    /*background-color: brown;*/
+    object-fit: cover;
+    transform: translateX(-50%);
+
+    overflow: visible;
+}
+.trick{
+    width: 7rem;
+    height: 7rem;
+
+    display: grid;
+    place-items: center;
+
+    background-color: var(--rich-blue);
+    border-radius: 50%;
+    box-shadow: 0 -25px 2rem var(--rich-dark) inset, 0 0 1rem var(--rich-dark) inset, 0 20px 2rem #000;
+    transition: 0.2s;
+}
+.trick.completed{
+    background-color: var(--light);
+    box-shadow: 0 -25px 2rem var(--light-shadow) inset, 0 0 1rem var(--rich-dark) inset, 0 20px 2rem #000, 0 -1px 10rem var(--light-shadow);
+}
+
+.trick button{
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: none;
+    background-color: transparent;
+    color: var(--light);
+    font-size: var(--fs-l);
+    padding-left: 3px;
+    display: grid;
+    place-items: center;
+}
+
+.trick button img{
+    width: 70%;
+    height: 70%;
+    color: var(--light);
+    mix-blend-mode:darken;
+}
+
+
+
+@media all and (max-width: 1368px) {
+    .screen-container.tricks{
+        min-height: 110vh;
+    }
+}
+
+@media all and (max-width: 490px) {
+    body{
+        padding: 0 0 0px;
+        overflow: scroll;
+        min-height: 200vh;
+    }
+    .screen-container.tricks{
+        min-height: 200vh;
+    }
+    .screen-container.tricks h1.titolo{
+        position: relative;
+        margin-top: 0;
+        align-self: baseline;
+    }
+    .trick-list{
+        position: relative;
+        top: 5rem;
+        width: 100%;
+        height: 200vh;
+        gap: 2rem;
+        flex-wrap: wrap;
+        padding: 0 30px;
+        margin: 0;
+        overflow: visible;
+    }
+    .trick-list li{
+        width: 100%;
+        height: 4rem;
+        transform: translateY(-50%);
+    }
+    
+}

@@ -1,0 +1,30 @@
+.err-title{
+    width: 50%;
+    height: 10rem;
+    font-size: var(--fs-xl);
+    color: var(--orange);
+    text-shadow: var(--sienna) -12px 0 0, #000 5px 2px 2rem;
+    z-index: 2;
+    text-align: center;
+    position: relative;
+    top: 8vh;
+}
+.err-content{
+    font-size: var(--fs-600);
+}
+@media all and (max-width:490px) {
+    .screen-container.errors{
+        min-height: 80vh;
+    }
+    .screen-container.errors #authenticate h1{
+        font-size: var(--fs-600);
+    }
+    .err-content{
+        font-size: var(--fs-400);
+    }
+    .err-title{
+        position: absolute;
+        text-shadow: var(--sienna) -10px 0 0, #000 5px 2px 2rem;
+        top: 15vh;
+    }
+}

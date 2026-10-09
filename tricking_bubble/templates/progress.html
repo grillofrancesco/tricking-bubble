@@ -1,0 +1,37 @@
+{% load custom_filters %}
+{% load static %}
+<div class="progress-space">
+    {% for i in indici_categorie %}
+        
+        <div class="category-space">
+            <div class="circular-progress" data-progress="{{ percentages|get_item:i }}">
+                
+                {% if i == 0 %}
+                    <!-- img power moves -->
+                    <img src="{% static 'img_categories/pwr_move__0015_Backflip.png' %}" alt="backflip">
+                {% elif i == 1 %}
+                    <!-- img caricamenti -->
+                    <img src="{% static 'img_categories/crc_move__0000_TouchDown-Raiz.png' %}" alt="touchdown raiz">
+                {% elif i == 2 %}
+                    <!-- img avvitamenti -->
+                    <img src="{% static 'img_categories/avv_move__0003_Full.png' %}" alt="full">
+                {% endif %}
+                
+                <span class="progress-value"> 0% </span>
+                
+            </div>
+            <p>
+                {% if i == 0 %}
+                    Power moves: 
+                {% elif i == 1 %}
+                    Caricamenti: 
+                {% elif i == 2 %}
+                    Avvitamenti: 
+                {% endif %}
+                {{ number_of_completed_tricks|get_item:i }}/{{ number_of_tricks|get_item:i }}
+            </p>
+        </div>
+    {% endfor %}
+
+</div>
+<script src="{% static 'scripts/show_progress.js' %}"></script>

@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="screen-container authenticate">
+        <!-- onsubmit='return validateForm();' se true manda a django, se false no-->
+        <form action="" method="post" onsubmit="return validateForm();" id="authenticate">  
+            {% csrf_token %}
+            {% if type == "register" %} 
+                <h2>Registrati:</h2>
+                {% if err_utente is not None %}
+                    <div class="err-popup">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                        <p>{{ err_utente }}</p>
+                    </div>
+                {% endif %}
+                <hr id="separator">
+                <!-- Campi per la registrazione -->
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" class="inputField" placeholder="Inserisci la tua email" required>
+                
+                <label for="username">Username:</label>
+                <input id="username" type="text" name="username" class="inputField" placeholder="Inserisci il tuo username" required maxlength="32">
+                
+                <label for="password1">Proteggi il tuo account:</label>
+                <input type="password" id="password1" name="password1" class="inputField" placeholder="Inserisci una password" required>
+                
+                <label for="password2">Ripeti la password:</label>
+                <input type="password" id="password2" name="password2" class="inputField" placeholder="Inserisci una password" required>
+                
+                <button type="submit">Invia</button>
+
+                <p>
+                    Hai già un account? 
+                    <a href="{% url 'login' %}">Accedi!</a>
+                </p>
+                
+            {% else %}
+                <h2>Accedi:</h2>
+                {% if blocked_access %}
+                    <div class="err-popup">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                        <p>{{ err_string }}</p>
+                    </div>
+                {% endif %}
+                
+                {% if err_utente is not None %}
+                    <div class="err-popup">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                        <p>{{ err_utente }}</p>
+                    </div>
+                {% endif %}
+                <hr id="separator"> 
+                <label for="username">Username:</label>
+                <input type="text" name="username" id="username" class="inputField" placeholder="Inserisci il tuo username" required maxlength="32">
+                <label for="password1">Password:</label>
+                <input type="password" name="password1" class="inputField" placeholder="Inserisci la tua password" required>
+               
+                <button type="submit">Invia</button>
+                <p>
+                    Non hai un account? 
+                    <a href="{% url 'register' %}">Registrati!</a>
+                </p>
+            
+            {% endif %}
+        </form>
+    </div>
+    {% load static %}
+    <script src="{% static 'scripts/authenticate_script.js' %}"></script>
+{% endblock %}

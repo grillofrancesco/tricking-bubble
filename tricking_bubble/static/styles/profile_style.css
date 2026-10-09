@@ -1,0 +1,262 @@
+.screen-container.profile{
+    display: flex;
+    justify-content:space-evenly;
+    align-content: center;
+    flex-direction: column;
+}
+.profile-title{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 90%;
+    min-height: 10rem;
+    
+}
+.profile-title h1{
+    color: var(--orange);
+    text-shadow: var(--sienna) -10px 0 0, #000 5px 2px 2rem;
+    font-size: clamp(var(--fs-600), 2vw + var(--fs-600), var(--fs-xl));
+    letter-spacing: 0.2rem;
+}
+.img-profilo-space{
+    margin-right: 3vw;
+    width: clamp(7rem, 8vw + 5rem, 14rem);
+    height: clamp(7rem, 8vw + 5rem, 14rem);
+    /*aspect-ratio: 1/1;*/
+    display: grid;
+    place-items: center;
+    background-color: #eee;
+    border-radius: 50%;
+    border: 6px solid var(--rich-blue);
+    
+    overflow:hidden;
+}
+.img-profilo-space .img-profilo{
+    width: 70%;
+    height: 70%;
+    overflow: hidden;
+    z-index: 2;
+}
+.img-profilo-space img.img-profilo{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 10;
+}
+.profile-content{
+    min-width: 60%;
+    width: fit-content;
+    min-height: 26rem;
+    background-color: var(--dark);
+    border-radius: 0.5em;
+    border: 2px solid var(--rich-blue);
+    position: relative;
+    
+    padding: 2rem 3rem;
+    margin-bottom: 10rem;
+}
+.profile-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+}
+.profile-info h1{
+    width: 100%;
+    font-size: var(--fs-l);
+    color: var(--light);
+    border-bottom: 1px solid var(--rich-blue);
+    margin-bottom: 2rem;
+}
+.profile-info p.user-info{
+    display: block;
+    color: var(--light);
+    font-size: var(--fs-400);
+    white-space:normal;
+
+    margin-bottom: 2rem;
+    width: 100%;
+}
+p.user-info:first-of-type{
+    word-break: break-all;
+}
+.profile-info p .less-visible{
+    margin-left: 1rem;
+    opacity: 0.7;
+}
+.profile-info button{
+    display: inline-block;
+    width: 8rem;
+    height: 3rem;
+    border-radius: 0.9em;
+    padding: 0.02rem 0.05rem;
+    font-size: var(--fs-400);
+    background-color: var(--rich-blue);
+    border: 2px solid var(--light);
+    transition: all 0.2s;
+}
+.profile-info button:hover{
+    background-color: var(--dark);
+    border: 2px solid var(--rich-blue);
+}
+.profile-info button.edit-credentials{
+    margin-left: auto;
+}
+.profile-info button a{
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+}
+.profile-info button.in-profile-logout{
+    display: none;
+}
+
+.progress-space{
+    margin-top: 3rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+.category-space{
+    width: 28rem;
+    height: 31rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 3rem;
+    font-size: var(--fs-l);
+    font-weight: bold;
+}
+.category-space p{
+    color: var(--light);
+    text-align: center;
+}
+.circular-progress{
+    position: relative;
+    width: clamp(18rem, 30vw + 6rem, 20rem);
+    height: clamp(18rem, 30vw + 6rem, 20rem);
+    background: transparent;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
+.circular-progress::before{
+    content:"";
+    position: absolute;
+    width: clamp(15.5rem, 30vw + 4rem, 17.5rem);
+    height: clamp(15.5rem, 30vw + 4rem, 17.5rem);
+    background-color: var(--light);
+    border-radius: 50%;
+    box-shadow: 0 -25px 2rem var(--light-shadow) inset, -2px 5px 3rem var(--rich-dark) inset;
+}
+.circular-progress .progress-value{
+    position: absolute;
+    color: var(--dark);
+    z-index: 3;
+    opacity: 0;
+    transition: all 0.4s;
+}
+.circular-progress:hover .progress-value{
+    opacity: 1;
+    transition-delay: 0.3s;
+}
+.circular-progress img{
+    width: 70%;
+    height: 70%;
+    position: absolute;
+    z-index: 4;
+    object-fit: cover;
+    transform: scale(1);
+    transition: all 0.4s;
+}
+.circular-progress:hover img{
+    transform: scale(0);
+}
+
+@media all and (max-width: 1368px) {
+    .screen-container.profile{
+        justify-content: space-evenly;
+    }
+}
+@media all and (max-width: 1024px) {
+    .category-space p{
+        border-bottom: 2px solid var(--rich-blue);
+    }
+    .circular-progress:hover .progress-value{
+        display: none;
+    }
+    .circular-progress:hover img{
+        transform: scale(1);
+    }
+}
+@media all and (max-width: 768px) {
+    .screen-container.profile{
+        justify-content: center;
+        padding-top: 3rem;
+    }
+    .profile-title{
+        width: 90%;
+    }
+    .profile-content{
+        width: clamp(80%, 60vw * 5rem, 90%);
+    }
+    .profile-content h1{
+        font-size: clamp(var(--fs-400), 2vw + var(--fs-400), var(--fs-l));
+    }
+    .profile-content p{
+        font-size: var(--fs-600);
+    }
+}
+@media all and (max-width:490px){
+    .screen-container.profile{
+        min-height: 100vh;
+    }
+    .profile-title{
+        width: 90%;
+        gap: 0.2rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 3rem;
+    }
+    .profile-title h1{
+        width: 100%;
+        text-align: center;
+        font-size: clamp(var(--fs-400), 2vw + var(--fs-600), var(--fs-l));
+        text-shadow: var(--sienna) -6px 0 0, #000 5px 2px 2rem;
+        word-break: break-all;
+    }
+    .profile-content{
+        width: 95%;
+        padding: 2rem 2rem;
+    }
+    .profile-content h1{
+        font-size: var(--fs-600);
+        overflow: visible;
+    }
+    .profile-info button.edit-credentials{
+        margin-left: 0;
+    }
+    .profile-info button.in-profile-logout{
+        display: block;
+        margin-left: auto;
+        background-color: var(--dark);
+        border: 2px solid var(--rich-blue);
+    }
+    .profile-info button.in-profile-logout:hover{
+        background-color: var(--rich-blue);
+        border: 2px solid var(--light);
+    }
+    
+    .category-space p{
+        font-size: var(--fs-600);
+    }
+}

@@ -1,0 +1,163 @@
+#authenticate{
+    width: clamp(35%, 40vw + 10rem, 50%);
+    min-height: 30vh;
+    padding: 3rem 2rem;
+    background-color: #ddd;
+    margin: 0 0 10rem 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    gap: 0.5rem;
+    font-size: var(--fs-400);
+
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 0 var(--rich-blue);
+}
+#authenticate a{
+    color: var(--rich-blue);
+}
+
+#authenticate h2{
+    text-align: center;
+    font-size: var(--fs-l);
+    white-space: break-spaces;
+}
+#authenticate label{
+    font-weight: bold;
+}
+#authenticate input{
+    height: 2.4rem;
+    padding: 10px 1rem;
+    font-size: var(--fs-400);
+}
+#authenticate button{
+    width: 10rem;
+    height: 2.3rem;
+    margin: 2rem auto 0 auto;
+    text-align: center;
+    font-size: var(--fs-400);
+    background-color: var(--rich-blue);
+    border: none;
+    color: #ddd;
+    border-radius: 0.25em;
+    transition: all 0.2s;
+}
+#authenticate button a{
+    color: #ddd;
+}
+#authenticate button:hover{
+    transform: scale(1.1);
+}
+
+#authenticate p{
+    margin-top: 2rem;
+}
+.err-popup{
+    width: 100%;
+    min-height: 2.5rem;
+    background-color: var(--light);
+    border: 2px solid var(--sienna);
+    border-radius: 0.25em;
+    padding: 0.5rem 0.8rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--sienna);
+    white-space: break-spaces;
+}
+#authenticate .err-popup p{
+    margin-top: 0px;
+    margin-left: 1rem;
+}
+#authenticate .err-popup i{
+    overflow:visible;
+    width: 18px;
+    height: 18px;
+}
+
+#authenticate .final-buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    gap: 0.2rem;
+}
+
+#authenticate input[type="file"] {
+    display: none;
+}
+#authenticate label#file-upload{
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+
+    border-bottom: 2px solid var(--rich-blue);
+}
+#authenticate label#file-upload p{
+    margin-top: 0;
+    font-weight: normal;
+    margin-right: 1rem;
+}
+#authenticate label#file-upload i{
+    width: 3rem;
+    height: 3rem;
+    display: grid;
+    place-items: center;
+    font-size: var(--fs-600);
+}
+
+#authenticate label#empty_img{
+    width: 100%;
+}
+#authenticate label#empty_img p{
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+}
+label#empty_img input#empty_img{
+    width: 2.2rem;
+    height: 2.2rem;
+    margin-left: 4rem;
+}
+
+@media all and (max-width: 1024px){
+    #authenticate{
+        width: clamp(35%, 40vw + 10rem, 60%);
+        margin: 0 auto 5rem auto;
+    }
+}
+@media all and (max-width: 768px){
+    #authenticate{
+        width: 75%;
+    }
+}
+@media all and (max-width: 490px){
+    .screen-container.authenticate{
+        min-height: 100vh;
+        height: 120vh;
+    }
+    #authenticate{
+        width: 95%;
+        font-size: calc(var(--fs-600) * 0.75);
+        margin: 0 auto 3rem auto;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    #authenticate h2{
+        font-size: var(--fs-600);
+    }
+    #authenticate p{
+        font-size: var(--fs-400);
+    }
+    #authenticate button:hover{
+        transform: scale(1);
+    }
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {{ title }} </title>
+
+    <!-- CSS Styles -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/scroll_bar_style.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/nav_style.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/footer_style.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/authenticate_style.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/home_style.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/card_style.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/trick_style.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/trick_popup_style.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/profile_style.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/errors_style.css' %}">
+
+    <!--Link icone Font Awesome -->
+    <script src="https://kit.fontawesome.com/a5815fe4b6.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    {% include 'navbar.html' %}
+    
+    {% block content %}
+    {% endblock %}
+    
+    {% include 'footer.html' %}
+</body>
+</html>

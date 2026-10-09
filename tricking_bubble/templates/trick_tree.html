@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load custom_filters %}
+<!--  OVERLAY POPUP  -->
+    <div id="popup">
+        <div class="overlay" onclick="togglePopup()"></div>
+        <div class="window">
+            <div class="close-btn" onclick="togglePopup()"><i class="fa-solid fa-xmark"></i></div>
+            <h1></h1>
+            <div class="img-trick-space" id="checkTrick">
+                <button class="pressable-trick" onclick="completeTrick()" id="checkIfCompletato">
+                    <img src="" class="inside-trick">
+                </button>
+            </div>
+            <div class="content">
+                <p class="descrizione"></p>
+                <ul class="tutorial-links">
+                    
+                </ul>
+                <hr>
+                <div class="ratings">
+                    <div class="valutazione">
+                        <p>Quanto è difficile questo trick per te?</p>
+                        <span class="i-space" id="putRating">
+                            <p class="shown-media"> / 5</p>
+                        </span>                        
+                    </div>
+                    <h1 id="comment-label">Commenti:</h1>
+                    <div class="comments-space">
+                        {% csrf_token %}
+
+                    </div>
+                    <div class="add-comment">
+                        <input type="text" id="comment-content" maxlength="128" placeholder="Lascia un commento">
+                        <button type="submit" onclick="registraCommento('{{ user }}');"><i class="fa-solid fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="screen-container tricks">
+        <h1 class="titolo ff-anton">{{ categoria }}</h1>
+        <ul class="trick-list">
+
+            {% for trick in tricks %}
+                <li>
+
+                    <span class="trick
+                    {% if trick.id in list_of_completed %}
+                        completed
+                    {% endif %}
+                    "> 
+                    <button onclick='openPopup(
+                        titolo="{{ trick.nome }}", 
+                        descrizione="{{ trick.descrizione }}", 
+                        link_1="{{ trick.link_1 }}", 
+                        link_2="{{ trick.link_2 }}", 
+                        link_3="{{ trick.link_3 }}", 
+                        media="{{ trick.get_media }}", 
+                        foto_trick = "{{ trick.foto.url }}",
+                        id_trick = "{{ trick.id }}",
+                        completed = "{% if trick.id in list_of_completed %}"+"true"+"{% endif %}",
+                        json_commenti = "{{ trick.comment_set.all|toJson }}",
+                        );' >
+                    <img src="{{ trick.foto.url }}"/> 
+                </button></span>
+            </li>
+            
+            {% endfor %}
+        </ul>
+    </div>
+
+
+    {% load static %}
+    <script src="{% static 'scripts/trick_position_script.js' %}"></script>    
+    <script src="{% static 'scripts/trick_popup.js' %}"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        setTimeout(()=>{
+            $(document).on('click', '.close-btn', () =>{
+                window.location.reload();
+            });
+        }, 1500)
+        setTimeout(()=>{
+            $(document).on('click', '.overlay', () =>{
+                window.location.reload();
+            });
+        }, 1500)
+        var utente = "{{ request.user }}"
+    </script>
+
+{% endblock %}
+
+<!-- PREMUTO PULSANTE VIENE CHIAMATA FUNZIONE IN HTML
+VIENE PRESO TRICK.COMMENT_SET.ALL, SALVATO IN UNA VARIABILE, TRASFORMATA IN JSON, 
+VIENE INVIATA CME PARAMETRO ALLA FUNZIONE DEI COMMENTI -->

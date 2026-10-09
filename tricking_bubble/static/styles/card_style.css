@@ -1,0 +1,95 @@
+.screen-container.categories{
+    align-content: space-evenly;
+}
+
+h1.titolo{
+    text-align: center;
+    color: var(--orange);
+    font-size: var(--fs-xl);
+    letter-spacing: 0.2rem;
+    text-shadow: var(--sienna) -12px 0 0, #000 5px 2px 2rem;
+}
+form{
+    width: 100%;
+}
+.cards{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 1.5rem;
+    width: 100%;
+    margin-top: 3rem;
+}
+.card{
+    padding-bottom: 3rem;
+    transition: all 0.3s ease-in-out;
+    display: grid;
+    place-content: center;
+}
+.card p{
+    padding-top: 3rem;
+    text-align: center;
+    color: var(--light);
+    font-size: var(--fs-l);
+    text-shadow: none;
+}
+.card:hover{
+    transform: translateY(-1.2rem);
+}
+.card button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.category-card{
+    width: clamp(8rem, 8vw + 6rem, 20rem);
+    height: clamp(8rem, 8vw + 6rem, 20rem);
+    background-color: var(--light);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    
+    border: 2px var(--light-shadow);
+    border-radius: 50%;
+    box-shadow: 0 -25px 2rem var(--light-shadow) inset, -2px 5px 3rem var(--rich-dark) inset, 0 30px 2rem #000,0 -2px 3rem #000;
+    margin: 2rem;
+}
+.category-card.large{
+    width: clamp(12rem, 10vw + 6rem, 40rem);
+    height: clamp(12rem, 10vw + 6rem, 40rem);
+}
+.category-card img{
+    width: 80%;
+    height: 80%;
+}
+@media all and (max-width: 1024px){
+    h1.titolo{
+        font-size: var(--fs-l);
+    }
+    .cards{
+        gap: 0rem;
+    }
+    .card p{
+        padding-top: 4rem;
+    }
+}
+@media all and (max-width: 490px) {
+    h1.titolo{
+        margin: 2rem 0 0 0;
+        white-space:normal;
+        text-shadow: var(--sienna) -8px 0 0, #000 5px 2px 2rem;
+    }
+    .card:hover{
+        transform: translateY(0);
+    }
+    .card{
+        width: 100%;
+    }
+    .card p{
+        padding-top: 0;
+        border-bottom: 2px solid var(--rich-blue);
+    }
+}

@@ -1,0 +1,30 @@
+{% load static %}
+<form action="" method="post">
+    {% csrf_token %}
+    <div class="cards">
+        <div class="card">
+            <button type="submit" name="category" value="1">
+                <span class="category-card large">
+                    <img src="{% static 'img_categories/pwr_move__0015_Backflip.png' %}" alt="backflip">
+                </span>
+                <p class="ff-anton">Power Moves</p>
+            </button>
+        </div>
+        <div class="card">
+            <button type="submit" name="category" value="2">
+                <span class="category-card large">
+                    <img src="{% static 'img_categories/crc_move__0000_TouchDown-Raiz.png' %}" alt="touchdown raiz">
+                </span>
+                <p class="ff-anton">Caricamenti</p>
+            </button>
+        </div>
+        <div class="card">
+            <button type="submit" name="category" value="3">
+                <span class="category-card large">
+                    <img src="{% static 'img_categories/avv_move__0003_Full.png' %}" alt="full">
+                </span>
+                <p class="ff-anton">Avvitamenti</p>
+            </button>
+        </div>
+    </div>
+</form>
