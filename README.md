@@ -21,8 +21,10 @@ To run this project locally, you need to set up a virtual environment and instal
     `python -m venv venv`
 
 2. Activate the environment:
+
   On Windows: 
   `venv\Scripts\activate`
+
   On macOS/Linux: 
   `source venv/bin/activate`
 
@@ -31,7 +33,7 @@ To run this project locally, you need to set up a virtual environment and instal
 
 ## Run the development server:
 
-    `python manage.py runserver`
+`python manage.py runserver`
 
 ---
 
@@ -56,7 +58,9 @@ Per avviare il progetto in locale, è necessario creare un ambiente virtuale e i
     `python -m venv venv`
 
 2. Attiva l'ambiente:
+
   Su Windows: `venv\Scripts\activate`
+
   Su macOS/Linux: `source venv/bin/activate`
 
 3. Installa le dipendenze:
@@ -64,4 +68,4 @@ Per avviare il progetto in locale, è necessario creare un ambiente virtuale e i
 
 Avvia il server di sviluppo:
     
-    `python manage.py runserver`
+`python manage.py runserver`
