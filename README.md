@@ -6,7 +6,7 @@ https://github.com/user-attachments/assets/08a0b08b-c86b-4646-a794-ed96ec003c89
 
 ## Riguardo il Progetto
 
-Questo è stato il mio ultimo progetto di quinta superiore, mi ha aiutato a consolidare le basi di full-stack development. 
+Questo è stato il mio ultimo progetto di quinta superiore (2022-23), mi ha aiutato a consolidare le basi di full-stack development. 
 
 Si tratta di un sito web per tenere traccia del proprio progresso nell'arte del tricking e prevede l'avanzamento in tre macro-aree:
 
@@ -77,7 +77,7 @@ https://github.com/user-attachments/assets/73289f85-8fde-4998-a3b9-7c1e96eda92e
 
 ## About the project
 
-This has been my last high school project and it helped me consolidate full-stack development basics.
+This has been my last high school project (2022-23) and it helped me consolidate full-stack development basics.
 
 It is a website designer to track personal progress in the art of tricking, featuring progression across three main macro-areas:
 
